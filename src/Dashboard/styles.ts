@@ -9,7 +9,7 @@ export const Title = styled.h1`
   margin-top: 40px;
 `;
 
-export const Form = styled.div`
+export const FormSearch = styled.div`
   margin-top: 40px;
   max-width: 700px;
 
@@ -42,6 +42,33 @@ export const Form = styled.div`
       background: ${shade(0.2, '#04d361')};
     }
   }
+`;
+
+export const Form = styled.div`
+  margin-top: 40px;
+  max-width: 700px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  label {
+    display: inline-block;
+    color: #c9c9c9;
+    font-weight: bold;
+  }
+
+  select {
+    margin-top: 8px;
+    display: block;
+    width: 100%;
+    height: 40px;
+    color: #c9c9c9;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
 `;
 
 export const Playlist = styled.div`

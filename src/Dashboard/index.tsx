@@ -2,7 +2,7 @@ import React from 'react';
 
 import logo from '../assets/logo.svg';
 
-import { Title, Form, Playlist } from './styles';
+import { Title, FormSearch, Form, Playlist } from './styles';
 
 const Dashboard: React.FC = () => {
   return (
@@ -10,9 +10,21 @@ const Dashboard: React.FC = () => {
     <img src={logo} alt="Logo spotfy"/>
     <Title>Explore suas musicas</Title>
 
-    <Form>
+    <FormSearch>
       <input placeholder="Type a playlist" />
       <button type="submit">Search</button>
+    </FormSearch>
+
+    <Form>
+      <label htmlFor="locale">Locale</label>
+      <select name="locale" id="locale">
+        <option value="0">select</option>
+      </select>
+
+      <label htmlFor="locale">Locale</label>
+      <select name="locale" id="locale">
+        <option value="0">select</option>
+      </select>
     </Form>
 
     <Playlist>
