@@ -1,8 +1,11 @@
 import React from 'react';
+import Dashboard from './Dashboard';
+import GlobalStyle from './styles/global';
 
 const App: React.FC = () => (
   <>
-    <h1>Heloo</h1>
+    <Dashboard />
+    <GlobalStyle />
   </>
 );
 
