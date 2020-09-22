@@ -3,7 +3,7 @@ import axios from 'axios';
 const apiSpotify = axios.create({
   baseURL: 'https://api.spotify.com/v1/browse',
   headers: {
-    'Authorization': 'Bearer BQA4WFmndUjKTXYfQnrzaJqtckDQWSPljyKa1TqG3b-qwXmb5N7e8IfZvtZYGZst5g15CQz_s55BvecmzobFixk9MaxQQQ3MtOuK-RvRu4BnyUj2GSg0ODigaQv0rOWWqJ5kMV0yHLJuAfxsvi-jrzjC_qf1v1zYlZ1UeixyOmgFgObeGuy7gvGCaD6bpzbIqupMtMcjf2U0_oDPkqoksSSvKDKD9fLxN9KwyXIyDV3NhupE3s3J5gc7aX0Ei7oHowG2t80b8YpOEg'
+    'Authorization': 'Bearer BQC7LhYTsPXQ1OMO6E4uk-SeU_rKmtIzj46FZLg41nqWcN0Uq8mgJtRPbqRyC1HbV9NEFbnz9Uqc8ykq8BJ8YQedrINOFCqE32bOH6z-kbNW-cqWLnFDpAsDNw8aVPq6-SGr749pJVamFAM7SybhkAiudreYebGxPFX8VgBkHUuHkRphzbbnSerbFPV9HRSARlutapbcTNkrtwnPPHIpoD0a2iltuWoKn0eYoUove-yb59QQJICHpBZ_6SDs1SKW3C6RjB6MJZMxjg'
   },
 });
 

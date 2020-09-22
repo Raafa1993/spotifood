@@ -1,10 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import axios from 'axios';
 import logo from '../assets/logo.svg';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
+import apiSpotify from '../services/spotifyAPi';
 
-import { Title, FormSearch, Form } from './styles';
+
+import { Title, FormSearch, Filter } from './styles';
 import { format } from 'date-fns';
 import Playlist from '../componets/Playlist';
 
@@ -12,6 +14,29 @@ interface Value {
   name: string;
   value: string;
 }
+
+interface Item{
+  id: string;
+  name: string;
+  owner: {
+    display_name: string;
+  }
+  external_urls: {
+    spotify: string
+  }
+  images: any[]
+  tracks: {
+    total: number
+  }
+}
+
+interface PlaylistResponse {
+  message: string;
+  playlists: {
+    items: Item[]
+  };
+}
+
 const Dashboard: React.FC = () => {
 
   const [locale, setLocale] = useState<Value[]>([]);
@@ -19,6 +44,9 @@ const Dashboard: React.FC = () => {
   const [localeSelected, setLocaleSelected] = useState('')
   const [countrySelected, setCountrySelected] = useState('')
   const [startedDate, setStartedDate] = useState(new Date());
+  const [search, setSearch] = useState('');
+
+  const [playslist, setPlaylist] = useState<PlaylistResponse>({} as PlaylistResponse)
 
   useEffect(() => {
      axios.get('http://www.mocky.io/v2/5a25fade2e0000213aa90776').then(response => {
@@ -31,44 +59,85 @@ const Dashboard: React.FC = () => {
     setStartedDate(start);
   }, []);
 
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+
+    if(countrySelected && localeSelected) {
+      apiSpotify.get(`/featured-playlists?country=${countrySelected}&locale=${localeSelected}&timestamp=${startedDate.toISOString()}&offset=0&limit=50`).then((response) => {
+       setPlaylist(response.data);
+     });
+    } else if (!countrySelected && localeSelected) {
+      apiSpotify.get(`/featured-playlists?locale=${localeSelected}&timestamp=${startedDate.toISOString()}&offset=0&limit=50`).then((response) => {
+        setPlaylist(response.data);
+      });
+    } else if (countrySelected && !localeSelected) {
+      apiSpotify.get(`/featured-playlists?country=${countrySelected}&timestamp=${startedDate.toISOString()}&offset=0&limit=50`).then((response) => {
+        setPlaylist(response.data);
+      });
+    }
+  }
+
+  useEffect(() => {
+      apiSpotify.get(`/featured-playlists?timestamp=${startedDate.toISOString()}&offset=0&limit=50`).then((response) => {
+        setPlaylist(response.data);
+      });
+  }, [startedDate])
+
   return (
     <>
     <img src={logo} alt="Logo spotfy"/>
     <Title>Explore suas musicas</Title>
 
     <FormSearch>
-      <input placeholder="Type a playlist" />
-      <button type="submit">Search</button>
+      <input
+      type="search"
+      placeholder="Type a playlist"
+      value={search}
+      onChange={ e => setSearch(e.target.value) }
+      />
     </FormSearch>
 
-    <Form>
-      <label htmlFor="locale">Locale</label>
-        <select name="locale" id="locale" onChange={(e) => setLocaleSelected(e.target.value)}>
-        {locale.map(loc => (
-          <option key={loc.value} value={loc.value}>{loc.name}</option>
-        ))}
-      </select>
+    <Filter>
+      <form onSubmit={handleSubmit}>
+      <div className="field-group">
+        <label htmlFor="locale">Locale</label>
+          <select name="locale" id="locale" onChange={(e) => setLocaleSelected(e.target.value)}>
+            <option value="">Choose option</option>
+          {locale.map(loc => (
+            <option key={loc.value} value={loc.value}>{loc.name}</option>
+          ))}
+        </select>
+      </div>
 
-      <label htmlFor="country">country</label>
-      <select name="country" id="country" onChange={(e) => setCountrySelected(e.target.value)}>
-      {countries.map(country => (
-          <option key={country.value} value={country.value}>{country.name}</option>
-        ))}
-      </select>
+      <div className="field-group">
+        <label htmlFor="country">country</label>
+        <select name="country" id="country" onChange={(e) => setCountrySelected(e.target.value)}>
+        <option value="">Choose option</option>
+        {countries.map(country => (
+            <option key={country.value} value={country.value}>{country.name}</option>
+          ))}
+        </select>
+      </div>
 
+      <div className="field-group">
       <label>Start Date</label>
                 <DayPickerInput
                   placeholder="dd/mm/yyyy"
                   value={format(startedDate, 'dd/MM/yyyy')}
                   onDayChange={handleStartDateChange}
                 />
+      </div>
+      <div className="field-group-button">
+        <button type="submit">Filtrar</button>
+      </div>
+      </form>
+    </Filter>
 
-    </Form>
-
-    <Playlist filter={{localeSelected, countrySelected, startedDate}} />
+    <Playlist filter={playslist} search={search} />
 
     </>
   )
 };
+
 
 export default Dashboard;
