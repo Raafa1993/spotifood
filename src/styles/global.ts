@@ -11,7 +11,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #222222 url(${spotify}) no-repeat 70% -20%;
+    background: #222222;
     -webkit-font-smoothing: antialiased;
   }
 

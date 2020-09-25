@@ -49,6 +49,19 @@ export const Container = styled.div`
         font-size: 1rem;
         color: #FFFFFF;
       }
+      @media(max-width: 375px ) {
+        strong {
+          font-size: 0.85rem;
+        }
+
+        p {
+          font-size: 1.5rem
+        }
+
+        span {
+          font-size: 0.85rem;
+        }
+  }
     }
   }
 `;

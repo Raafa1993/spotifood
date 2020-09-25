@@ -1,44 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+    <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/logo.svg"/>
+</h1>
 
-## Available Scripts
+<h4 align="center">
+	SpotiFood 🚀
+</h4>
 
-In the project directory, you can run:
 
-### `yarn start`
+## 💻 - Sobre o projeto
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Crie um aplicativo da web chamado Spotifood usado para exibir as listas de reprodução preferidas dos clientes. O aplicativo da web possui apenas uma página:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Uma página que lista as listas de reprodução em destaque no Spotify de acordo com alguns critérios.
 
-### `yarn test`
+## - Regras do negócio
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- A página é composta por dois componentes:
+    -Uma lista de playlists em destaque
+    -Um componente de filtro com campos de filtro de API e uma entrada de texto de pesquisa local para filtrar as listas de reprodução por "nome".
+- O componente de filtro deve ser usado para filtrar os elementos exibidos pela lista de listas de reprodução em destaque.
+- Os campos de filtro da API e seus possíveis valores / tipo devem ser montados consumindo esta API [1. Filtros de listas de reprodução] ( http://www.mocky.io/v2/5a25fade2e0000213aa90776 )
+- As listas de reprodução apresentadas a serem exibidas devem ser consumidas a partir desta API [2. Consulte a documentação do Spotify] ( https://developer.spotify.com/web-api/get-list-featured-playlists/ )
+- Cada vez que o usuário altera qualquer informação no componente do filtro, a lista deve ser atualizada de acordo. Em caso de alteração do campo do filtro de API, você deve chamar a API de listas de reprodução com os parâmetros de filtro todas as vezes.
+- Considerando que vivemos em um mundo caótico e em rápida mudança, a página deve atualizar seu conteúdo a cada 30 segundos, para ver se alguma informação das APIs do Spotify foi alterada.
 
-### `yarn build`
+## - Dicas ou restrições
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Usaremos uma API da API da Web do Spotify. Você deve seguir o guia do Spotify para criar um token necessário para acessar a API do Spotify. Para montar os campos de filtro de API no componente de filtro, você deve consumir a API que fornece os metadados sobre os campos (Link 1). Você pode usar o Material UI, Bootstrap ou qualquer outro kit de ferramentas para acelerar sua resolução. Não forneceremos nenhum protótipo ou design de IU.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## - Requisitos não Funcionais
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Como esta aplicação será um sucesso mundial, ela deve estar preparada para ser acessível, responsiva, tolerante a falhas e resiliente. É altamente recomendável usar o React para criar o aplicativo. Além disso, elabore brevemente os detalhes da arquitetura de sua solução, a escolha de padrões e estruturas. Bifurque este repositório e envie seu código.
 
-### `yarn eject`
+## 🛠 - Tecnologias
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Typescript]
+- [React-js]
+- [axios][nodejs]
+- [Javascript]
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🚀 - Como executar o projeto
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🚀 - Como executar o projeto
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+# Clone este repositório
+$ git clone https://github.com/Raafa1993/spotifood
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd spotifood
+
+# Instale as dependências
+$ yarn
+
+# Execute a aplicação em modo de desenvolvimento
+$ yarn start
+
+# O servidor inciará na porta:3000 - acesse http://localhost:3000
+```

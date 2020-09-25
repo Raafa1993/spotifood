@@ -28,10 +28,43 @@ export const FormSearch = styled.div`
   }
 `;
 
+export const Separator = styled.div`
+    display: flex;
+    justify-content: center;
+    max-width: 700px;
+    margin-top: 20px;
+}
+
+  p {
+    color: #fff;
+  }
+    &::before{
+    content: '';
+    width: 880px;
+    height: 2px;
+    background-color: #fff;
+    margin-right: 20px;
+    display: flex;
+    align-self: center;
+
+  }
+
+  &::after {
+    content: '';
+    width: 880px;
+    height: 2px;
+    background-color: #fff;
+    margin-left: 20px;
+    display: flex;
+    align-self: center;
+  }
+`;
+
+
 export const Filter = styled.div`
 
   form {
-  margin-top: 40px;
+  margin-top: 20px;
   max-width: 700px;
 
   display: flex;

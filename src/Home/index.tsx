@@ -6,15 +6,13 @@ import 'react-day-picker/lib/style.css';
 import apiSpotify from '../services/spotifyAPi';
 
 
-import { Title, FormSearch, Filter } from './styles';
+import { Title, FormSearch, Separator, Filter } from './styles';
 import { format } from 'date-fns';
 import Playlist from '../componets/Playlist';
-
 interface Value {
   name: string;
   value: string;
 }
-
 interface Item {
   id: string;
   name: string;
@@ -29,7 +27,6 @@ interface Item {
     total: number
   }
 }
-
 interface PlaylistResponse {
   message: string;
   playlists: {
@@ -62,6 +59,7 @@ const Home: React.FC = () => {
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
+    setUrl('')
 
     if(countrySelected && localeSelected) {
       apiSpotify.get(`/featured-playlists?country=${countrySelected === 'en_US' ? 'US' : countrySelected}&locale=${localeSelected}&timestamp=${startedDate.toISOString()}&offset=0&limit=50`).then((response) => {
@@ -81,20 +79,22 @@ const Home: React.FC = () => {
     }
   }
 
-    useEffect(() => {
-      setInterval(() => {
-        apiSpotify.get(url).then((response) => {
-          setPlaylist(response.data);
-        });
+  useEffect(() => {
+    const interval = setInterval(() => {
+        if (url) {
+          apiSpotify.get(url).then((response) => {
+            setPlaylist(response.data);
+          });
+        }
       }, 30000);
-    }, [ url]);
+      return () => clearInterval(interval);
+  }, [url]);
 
 
   useEffect(() => {
       apiSpotify.get(`/featured-playlists?timestamp=${new Date().toISOString()}&offset=0&limit=50`).then((response) => {
         setPlaylist(response.data);
       });
-      console.log(process.env.REACT_SPOTIFY_TOKEN)
     }, [])
 
   return (
@@ -110,6 +110,10 @@ const Home: React.FC = () => {
       onChange={ e => setSearch(e.target.value) }
       />
     </FormSearch>
+
+    <Separator>
+      <p>Filter</p>
+    </Separator>
 
     <Filter>
       <form onSubmit={handleSubmit}>
