@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="SpotiFood" title="#SpotiFood" src="./assets/logo-spotifood.jpg"/>
+    <img alt="SpotiFood" title="#SpotiFood" src="src/assets/logo-spotifood.jpg"/>
 </h1>
 
 <h4 align="center">
@@ -45,15 +45,12 @@ As this application will be a worldwide success, it must be prepared to be acces
 - [Typescript]
 - [React-js]
 - [axios]
-<<<<<<< HEAD
 - [Yarn]
 
 ## Wireframe
 
-Wireframe AdobeXD [https://xd.adobe.com/view/7d2a0660-513f-4f08-92b7-ec4f83fe2ef7-2879/]
-=======
-- [Javascript]
->>>>>>> afe01061c48a866809990863bf281735becf9915
+Wireframe AdobeXD
+[https://xd.adobe.com/view/7d2a0660-513f-4f08-92b7-ec4f83fe2ef7-2879/]
 
 ### 🚀 - Getting Started
 
