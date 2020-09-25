@@ -42,10 +42,10 @@ As this application will be a worldwide success, it must be prepared to be acces
 
 ## 🛠 - Technology's
 
-- [Typescript]
-- [React-js]
-- [axios]
-- [Yarn]
+- [Typescript](https://www.typescriptlang.org/)
+- [React](https://pt-br.reactjs.org/)
+- [axios](https://www.npmjs.com/package/axios)
+- [Yarn](https://yarnpkg.com/)
 
 ## Wireframe
 
@@ -53,6 +53,9 @@ Wireframe AdobeXD
 [https://xd.adobe.com/view/7d2a0660-513f-4f08-92b7-ec4f83fe2ef7-2879/]
 
 ### 🚀 - Getting Started
+
+Rename **.env.example** to **.env** end put spotify token. **Is more important follow this step by step. Make sure everything is working normally.**
+
 
 ```bash
 # clone this repository
