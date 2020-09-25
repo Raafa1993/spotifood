@@ -36,7 +36,7 @@ Como esta aplicação será um sucesso mundial, ela deve estar preparada para se
 
 - [Typescript]
 - [React-js]
-- [axios][nodejs]
+- [axios]
 - [Javascript]
 
 ### 🚀 - Como executar o projeto
