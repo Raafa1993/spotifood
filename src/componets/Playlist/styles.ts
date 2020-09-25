@@ -6,11 +6,10 @@ export const Container = styled.div`
 
   a {
     width: 100%;
-    display: block;
     text-decoration: none;
 
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     transition: transform 0.2s;
 
     &:hover {
@@ -36,17 +35,18 @@ export const Container = styled.div`
       align-self: normal;
 
       strong {
-        font-size: 12px;
+        font-size: 1rem;
         color: #FFFFFF;
       }
 
       p {
-        font-size: 36px;
+        font-size: 2.5rem;
         color: #FFFFFF;
+
       }
 
       span {
-        font-size: 18px;
+        font-size: 1rem;
         color: #FFFFFF;
       }
     }

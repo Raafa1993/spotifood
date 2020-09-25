@@ -1,10 +1,10 @@
 import React from 'react';
-import Dashboard from './Dashboard';
+import Home from './Home';
 import GlobalStyle from './styles/global';
 
 const App: React.FC = () => (
   <>
-    <Dashboard />
+    <Home />
     <GlobalStyle />
   </>
 );
