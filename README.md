@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/logo.svg"/>
+    <img alt="SpotiFood" title="#SpotiFood" src="./assets/logo.svg"/>
 </h1>
 
 <h4 align="center">
@@ -38,11 +38,6 @@ Como esta aplicação será um sucesso mundial, ela deve estar preparada para se
 - [React-js]
 - [axios][nodejs]
 - [Javascript]
-
-
-## 🚀 - Como executar o projeto
-
-
 
 ### 🚀 - Como executar o projeto
 
