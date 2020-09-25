@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="SpotiFood" title="#SpotiFood" src="./assets/logo.svg"/>
+    <img alt="SpotiFood" title="#SpotiFood" src="./assets/logo-spotifood.jpg"/>
 </h1>
 
 <h4 align="center">
@@ -7,52 +7,64 @@
 </h4>
 
 
-## 💻 - Sobre o projeto
+## 💻 - iFood Frontend Test
 
-Crie um aplicativo da web chamado Spotifood usado para exibir as listas de reprodução preferidas dos clientes. O aplicativo da web possui apenas uma página:
+Create a web application called Spotifood used to display the preferred playlists from iFood's customers. The web application has only one page:
 
-Uma página que lista as listas de reprodução em destaque no Spotify de acordo com alguns critérios.
+A page that lists the featured playlists at Spotify according to some criteria.
 
-## - Regras do negócio
+## - Business rules
 
-- A página é composta por dois componentes:
-    -Uma lista de playlists em destaque
-    -Um componente de filtro com campos de filtro de API e uma entrada de texto de pesquisa local para filtrar as listas de reprodução por "nome".
-- O componente de filtro deve ser usado para filtrar os elementos exibidos pela lista de listas de reprodução em destaque.
-- Os campos de filtro da API e seus possíveis valores / tipo devem ser montados consumindo esta API [1. Filtros de listas de reprodução] ( http://www.mocky.io/v2/5a25fade2e0000213aa90776 )
-- As listas de reprodução apresentadas a serem exibidas devem ser consumidas a partir desta API [2. Consulte a documentação do Spotify] ( https://developer.spotify.com/web-api/get-list-featured-playlists/ )
-- Cada vez que o usuário altera qualquer informação no componente do filtro, a lista deve ser atualizada de acordo. Em caso de alteração do campo do filtro de API, você deve chamar a API de listas de reprodução com os parâmetros de filtro todas as vezes.
-- Considerando que vivemos em um mundo caótico e em rápida mudança, a página deve atualizar seu conteúdo a cada 30 segundos, para ver se alguma informação das APIs do Spotify foi alterada.
+- The page is composed of two components:
+    -One list of featured playlists
+    -One filter component with API filter fields and one local search text input to filter the playlists by "name".
+- The page is composed of two components:
 
-## - Dicas ou restrições
+- One list of featured playlists
+One filter component with API filter fields and one local search text input to filter the playlists by "name".
+The filter component should be used to filter the elements displayed by the list of featured playlists.
 
-Usaremos uma API da API da Web do Spotify. Você deve seguir o guia do Spotify para criar um token necessário para acessar a API do Spotify. Para montar os campos de filtro de API no componente de filtro, você deve consumir a API que fornece os metadados sobre os campos (Link 1). Você pode usar o Material UI, Bootstrap ou qualquer outro kit de ferramentas para acelerar sua resolução. Não forneceremos nenhum protótipo ou design de IU.
+- The API filter fields and their possible values/type should be mounted by consuming this API [1. Playlists Filters] (http://www.mocky.io/v2/5a25fade2e0000213aa90776)
 
-## - Requisitos não Funcionais
+- The featured playlists to be displayed should be consumed from this API [2. See the documentation from Spotify] (https://developer.spotify.com/web-api/get-list-featured-playlists/)
 
-Como esta aplicação será um sucesso mundial, ela deve estar preparada para ser acessível, responsiva, tolerante a falhas e resiliente. É altamente recomendável usar o React para criar o aplicativo. Além disso, elabore brevemente os detalhes da arquitetura de sua solução, a escolha de padrões e estruturas. Bifurque este repositório e envie seu código.
+- Every time the user change any information on the filter component, the list should be refresh accordingly. In case of API filter field change you should recall the playlists API with the filter parameters every time.
 
-## 🛠 - Tecnologias
+- Considering that we live in a chaotic and fast-changing world, the page should refresh its content every 30 seconds, to see if any information from the Spotify APIs had been changed.
+
+## - Hints or Constraints
+
+We will use one API from Spotify Web API. You should follow the Spotify guide in order to create a token needed to access Spotify's API. To mount the API filter fields on the filter component, you must consume the API that provides the metadata about the fields (Link 1). You could use Material UI, Bootstrap or any other toolkit to accelerate your resolution. We will not provide any UI prototype or design.
+
+## - Non functional requirements
+
+As this application will be a worldwide success, it must be prepared to be accessible, responsive, fault tolerant and resilient. We strongly recommend using React to build the application. Also, briefly elaborate on your solution architecture details, choice of patterns and frameworks. Fork this repository and submit your code.
+
+## 🛠 - Technology's
 
 - [Typescript]
 - [React-js]
-- [axios][nodejs]
-- [Javascript]
+- [axios]
+- [Yarn]
 
-### 🚀 - Como executar o projeto
+## Wireframe
+
+Wireframe AdobeXD [https://xd.adobe.com/view/7d2a0660-513f-4f08-92b7-ec4f83fe2ef7-2879/]
+
+### 🚀 - Getting Started
 
 ```bash
-# Clone este repositório
+# clone this repository
 $ git clone https://github.com/Raafa1993/spotifood
 
-# Acesse a pasta do projeto no terminal/cmd
+# Access the project folder in terminal/cmd
 $ cd spotifood
 
-# Instale as dependências
+# Install the dependencies
 $ yarn
 
-# Execute a aplicação em modo de desenvolvimento
+# Run the application in development mode
 $ yarn start
 
-# O servidor inciará na porta:3000 - acesse http://localhost:3000
+# The server will start on the port:3000 - acess http://localhost:3000
 ```
